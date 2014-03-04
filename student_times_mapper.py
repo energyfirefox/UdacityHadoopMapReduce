@@ -12,15 +12,14 @@ def mapper():
 	# read input from csv file
 	reader = csv.reader(sys.stdin, delimiter = '\t')
 	# skip headers
-	reader.next()
+	#reader.next()
 	
 	for line in reader:  
 		# check record, if number of fields not equal 19, something is wrong with this record   		
     		if len(line) == 19:	
 			author_id = line[3]
-			hour = line[8][11:13]
-			
-			# emit author_id, hour			
+			hour = line[8][11:13]			
+			# emit author_id, hour:			
 			print "{0}\t{1}".format(author_id, hour)
 
 
